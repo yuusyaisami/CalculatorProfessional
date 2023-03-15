@@ -181,10 +181,13 @@
         TgDQASA1MVpwzwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>135, 17</value>
+  </metadata>
   <data name="CalculationMethodPicture.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZAAAACSCAYAAABrAJxzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAA1
-        0gAANdIB3mahkwAAWHxJREFUeF7t3Quod0101/eUUkoppRQpIqKISCkWkWARsZSSIEUJirRYSiRBLErF
+        0QAANdEBc9+A/gAAWHxJREFUeF7t3Quod0101/eUUkoppRQpIqKISCkWkWARsZSSIEUJirRYSiRBLErF
         EFEMhgYNERUNKlFUvOANNSHxho3RGGOMvl5ioomXaBJTE2+1rfdWrb3Yy3za84XlsP/n/M95zvO8z/Nm
         frDYe8+eWXPZM2vNrLnsTzk4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4eMf4Vx7otfBvLfo+D/Svc3hF
         4Bfvf5vDwcHBwcHHj89e9MsW/dJFX/xw/YxFcI+C+dcert+46F8s+j8X/SIOC717KQr/BYvwxf8vcFi4
@@ -577,10 +580,4 @@
         hgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
-  </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>135, 17</value>
-  </metadata>
 </root>

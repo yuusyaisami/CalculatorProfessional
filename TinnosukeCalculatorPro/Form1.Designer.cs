@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
-            System.Windows.Forms.ListViewGroup listViewGroup5 = new System.Windows.Forms.ListViewGroup("Result0", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup6 = new System.Windows.Forms.ListViewGroup("Result1", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Result0", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Result1", System.Windows.Forms.HorizontalAlignment.Left);
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.BasicBtn = new System.Windows.Forms.ToolStripButton();
             this.Normal = new System.Windows.Forms.ToolStripButton();
@@ -49,6 +49,7 @@
             this.CalculationResult = new System.Windows.Forms.ListView();
             this.FormulaResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.Debug = new System.Windows.Forms.Label();
             this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -186,7 +187,7 @@
             // 
             // CalculationMethodPicture
             // 
-            this.CalculationMethodPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.CalculationMethodPicture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculationMethodPicture.BackColor = System.Drawing.Color.MediumAquamarine;
             this.CalculationMethodPicture.Image = ((System.Drawing.Image)(resources.GetObject("CalculationMethodPicture.Image")));
@@ -223,8 +224,8 @@
             // 
             // CalculationFormula
             // 
-            this.CalculationFormula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.CalculationFormula.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculationFormula.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CalculationFormula.Location = new System.Drawing.Point(11, 54);
@@ -246,13 +247,13 @@
             this.FormulaResult});
             this.CalculationResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalculationResult.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            listViewGroup5.Header = "Result0";
-            listViewGroup5.Name = "Result0";
-            listViewGroup6.Header = "Result1";
-            listViewGroup6.Name = "Result1";
+            listViewGroup1.Header = "Result0";
+            listViewGroup1.Name = "Result0";
+            listViewGroup2.Header = "Result1";
+            listViewGroup2.Name = "Result1";
             this.CalculationResult.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup5,
-            listViewGroup6});
+            listViewGroup1,
+            listViewGroup2});
             this.CalculationResult.HideSelection = false;
             this.CalculationResult.Location = new System.Drawing.Point(0, 0);
             this.CalculationResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -267,12 +268,22 @@
             this.FormulaResult.Text = "Formula";
             this.FormulaResult.Width = 10000;
             // 
+            // Debug
+            // 
+            this.Debug.AutoSize = true;
+            this.Debug.Location = new System.Drawing.Point(910, 9);
+            this.Debug.Name = "Debug";
+            this.Debug.Size = new System.Drawing.Size(43, 15);
+            this.Debug.TabIndex = 2;
+            this.Debug.Text = "label1";
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.Debug);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ToolStrip);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -314,6 +325,7 @@
         private System.Windows.Forms.TabPage Calculation;
         private System.Windows.Forms.TabPage display;
         private System.Windows.Forms.CheckBox OutPutType;
+        private System.Windows.Forms.Label Debug;
     }
 }
 
