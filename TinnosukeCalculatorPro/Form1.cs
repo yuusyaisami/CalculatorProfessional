@@ -118,30 +118,34 @@ namespace CalculatorPro
 
         //--------------------------------------------self-made function----------------------------------------
         //This is the very spaghetti code!
-
+        ListViewItem ResultsItem = new ListViewItem();
         void MainCalculation()
         {   //operator or not.
-            
-            AddC = false;               // +
-            SubtractC = false;          // -
-            MultiplyC = false;          // x
-            DivideC = false;            // ÷
-            PowerC = false;             // ^
-            LeftParenthesisC = false;   // (
-            RightParenthesisC = false;  // )
-            EqualsC = false;            // =
-            DecimalPointC = false;      // .
+
+            ResultsItem = new ListViewItem();
+            if (OutPutType.Checked == true)
+                ResultsItem.Text = ">>" + TempFormula;
+            else
+            {
+                ResultsItem.Text = ">>";
+                for (int e = 0; Output[e] != null; e++) ResultsItem.Text += Output[e];
+            }
+            CalculationResult.Items.Add(ResultsItem);
             //string to double
             double[] FormulaValue = new double[255];
             int[] FirstPriority = new int[255];
             Complex[] complex = new Complex[100];
             for (int q = 0; Formula[FormulaRow][q] != null; q++) Output[q] = Formula[FormulaRow][q];
             int MostValue = 0, MostValueIndex = 0;
-
+            
             bool AddSubVB = false, MulDivVB = false, PowerVB = false,SinCosTanVB = false,rootVB = false;
+            bool AddSubPVB = false, MulDivPVB = false, PowerPVB = false, SinCosTanPVB = false, rootPVB = false;
+
+
+
             for (int MainLoop; ;)
             {
-
+                
                 //I don't want only the parentheses to exist.
                 CheckAndCorrect();
                 Priortize();
@@ -151,86 +155,68 @@ namespace CalculatorPro
                     if (isDecimal.IsMatch(Formula[FormulaRow][b]) || isInteger.IsMatch(Formula[FormulaRow][b]))
                         FormulaValue[b] = Convert.ToDouble(Formula[FormulaRow][b]);
                 }
-                AddSubVB = false;
-                MulDivVB = false;
-                PowerVB = false;
-                SinCosTanVB = false;
-                rootVB = false;
-
-
-                for (int B = 0; B < 255; B++) FirstPriority[B] = 0;
-                for (int i = 0; i < 252; i++)
-                {
-                    if (Formula[FormulaRow][i] == "+" && AddSubVB == false)
-                    {
-                        AddSubVB = true;
-                        FirstPriority[i] = priority[i];
-                    }
-                    else if (Formula[FormulaRow][i] == "-" && MulDivVB == false)
-                    {
-                        AddSubVB = true;
-                        FirstPriority[i] = priority[i];
-                    }
-                    else if (Formula[FormulaRow][i] == "*" && AddSubVB == false)
-                    {
-                        MulDivVB = true;
-                        FirstPriority[i] = priority[i];
-                    }
-                    else if (Formula[FormulaRow][i] == "/" && MulDivVB == false)
-                    {
-                        MulDivVB = true;
-                        FirstPriority[i] = priority[i];
-                    }
-                    else if (Formula[FormulaRow][i] == "^" && PowerVB == false)
-                    {
-                        PowerVB = true;
-                        FirstPriority[i] = priority[i];
-                    }
-                    else if (Formula[FormulaRow][i + 1] == "(" && Formula[FormulaRow][i + 3] == ")" && SinCosTanVB == false)
-                    {
-                        if(Formula[FormulaRow][i] == "sin"|| Formula[FormulaRow][i] == "cos" || Formula[FormulaRow][i] == "tan")
-                        {
-                            SinCosTanVB = true;
-                            FirstPriority[i] = priority[i];
-                        }
-                        else if(Formula[FormulaRow][i] == "√")
-                        {
-                            rootVB = true;
-                            FirstPriority[i] = priority[i];
-                        }
-                    }
-                    
-                }
+                
                 MostValueIndex = 0;
-                MostValue = 0;
                 for (int a = 0; a < 255; a++)
                 {
-                    if (MostValue < FirstPriority[a])
+                    if (MostValueIndex < priority[a])
                     {
                         MostValueIndex = a;
-                        MostValue = FirstPriority[a];
                     }
                 }
-                Debug.Text = Formula[FormulaRow][0] + "|" + Formula[FormulaRow][1] + "|" + Formula[FormulaRow][2] + "|" + Formula[FormulaRow][3]
-                        + Formula[FormulaRow][4] + "|" + Formula[FormulaRow][5] + "|" + Formula[FormulaRow][6];
+                
                 //calculation
                 bool NomalOperator = false;
                 if (Formula[FormulaRow][MostValueIndex] =="+")
                 {
                     FormulaValue[MostValueIndex - 1] = FormulaValue[MostValueIndex - 1] + FormulaValue[MostValueIndex + 1];
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
+
+                    Debug.Text = Formula[FormulaRow][0] + "|" + Formula[FormulaRow][1] + "|" + Formula[FormulaRow][2] + "|" + Formula[FormulaRow][3] + "|"
+                        + Formula[FormulaRow][4] + "|" + Formula[FormulaRow][5] + "|" + Formula[FormulaRow][6];
+
                     NomalOperator = true;
                 }
                 else if (Formula[FormulaRow][MostValueIndex] =="-")
                 {
                     FormulaValue[MostValueIndex - 1] = FormulaValue[MostValueIndex - 1] - FormulaValue[MostValueIndex + 1];
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
+
+                    
+
                     NomalOperator = true;
                 }
                 else if (Formula[FormulaRow][MostValueIndex] =="*")
                 {
                     FormulaValue[MostValueIndex - 1] = FormulaValue[MostValueIndex - 1] * FormulaValue[MostValueIndex + 1];
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
+
+                   
+
                     NomalOperator = true;
                 }
                 else if (Formula[FormulaRow][MostValueIndex] == "/")
@@ -238,7 +224,18 @@ namespace CalculatorPro
                     if (FormulaValue[MostValueIndex + 1] != 0)
                     {
                         FormulaValue[MostValueIndex - 1] = FormulaValue[MostValueIndex - 1] / FormulaValue[MostValueIndex + 1];
+                        if (FormulaMethod.Checked)
+                        {
+                            FormulaRow++;
+                            for (int a = 0; a < 255; a++)
+                            {
+                                Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                            }
+                        }
                         Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
+
+                       
+
                     }
                     else
                     {
@@ -256,13 +253,30 @@ namespace CalculatorPro
                 else if (Formula[FormulaRow][MostValueIndex] == "^")
                 {
                     FormulaValue[MostValueIndex - 1] =  Math.Pow(FormulaValue[MostValueIndex - 1], FormulaValue[MostValueIndex + 1]);
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
+
                     NomalOperator = true;
                 }
                 else if (Formula[FormulaRow][MostValueIndex] == "sin")
                 {
                     
                     FormulaValue[MostValueIndex] = Math.Sin(Math.PI * FormulaValue[MostValueIndex + 2] / 180.0);
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex] = FormulaValue[MostValueIndex].ToString();
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "Formula", "Left");
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "Formula", "Left");
@@ -271,10 +285,26 @@ namespace CalculatorPro
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 1, "FormulaValue", "Left", FormulaValue);
+
+                    if (FormulaMethod.Checked)
+                    {
+                        ResultsItem = new ListViewItem();
+                        ResultsItem.Text = "->";
+                        for (int c = 0; c < 255; c++) ResultsItem.Text += Formula[FormulaRow][c];
+                        CalculationResult.Items.Add(ResultsItem);
+                    }
                 }
                 else if (Formula[FormulaRow][MostValueIndex] == "cos")
                 {
                     FormulaValue[MostValueIndex] = Math.Cos(Math.PI * FormulaValue[MostValueIndex + 2] / 180.0);
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex] = FormulaValue[MostValueIndex].ToString();
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "Formula", "Left");
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "Formula", "Left");
@@ -283,10 +313,26 @@ namespace CalculatorPro
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 1, "FormulaValue", "Left", FormulaValue);
+
+                    if (FormulaMethod.Checked)
+                    {
+                        ResultsItem = new ListViewItem();
+                        ResultsItem.Text = "->";
+                        for (int c = 0; c < 255; c++) ResultsItem.Text += Formula[FormulaRow][c];
+                        CalculationResult.Items.Add(ResultsItem);
+                    }
                 }
                 else if (Formula[FormulaRow][MostValueIndex] == "tan")
                 {
                     FormulaValue[MostValueIndex] = Math.Tan(Math.PI * FormulaValue[MostValueIndex + 2] / 180.0);
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex] = FormulaValue[MostValueIndex].ToString();
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "Formula", "Left");
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "Formula", "Left");
@@ -295,10 +341,26 @@ namespace CalculatorPro
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 1, "FormulaValue", "Left", FormulaValue);
+
+                    if (FormulaMethod.Checked)
+                    {
+                        ResultsItem = new ListViewItem();
+                        ResultsItem.Text = "->";
+                        for (int c = 0; c < 255; c++) ResultsItem.Text += Formula[FormulaRow][c];
+                        CalculationResult.Items.Add(ResultsItem);
+                    }
                 }
                 else if (Formula[FormulaRow][MostValueIndex] == "√")
                 {
                     FormulaValue[MostValueIndex] = Math.Sqrt(FormulaValue[MostValueIndex + 2]);
+                    if (FormulaMethod.Checked)
+                    {
+                        FormulaRow++;
+                        for (int a = 0; a < 255; a++)
+                        {
+                            Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
+                        }
+                    }
                     Formula[FormulaRow][MostValueIndex] = FormulaValue[MostValueIndex].ToString();
 
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "Formula", "Left");
@@ -308,35 +370,41 @@ namespace CalculatorPro
                     MoveToArrayItem(FormulaRow, MostValueIndex + 3, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 2, "FormulaValue", "Left", FormulaValue);
                     MoveToArrayItem(FormulaRow, MostValueIndex + 1, "FormulaValue", "Left", FormulaValue);
+                    if (FormulaMethod.Checked)
+                    {
+                        ResultsItem = new ListViewItem();
+                        ResultsItem.Text = "->";
+                        for (int c = 0; c < 255; c++) ResultsItem.Text += Formula[FormulaRow][c];
+                        CalculationResult.Items.Add(ResultsItem);
+                    }
+                    
                 }
                 else
                 {
-                    ListViewItem ResultsItem = new ListViewItem();
+                    
                     if(Formula[FormulaRow][0] == "(")
                     {
                         Formula[FormulaRow][0] = Formula[FormulaRow][1];
                         FormulaValue[0] = FormulaValue[1];
                     }
                     //finish!
-                    if (OutPutType.Checked == true)
-                        ResultsItem.Text = TempFormula;
-                    else for (int e = 0; Output[e] != null; e++) ResultsItem.Text += Output[e];
 
 
-                    CalculationResult.Items.Add(ResultsItem);
+
                     ResultsItem = new ListViewItem(">" + FormulaValue[0].ToString());
                     CalculationResult.Items.Add(ResultsItem);
                     Results = FormulaValue[0];
 
-
+                    
                     for (int i = 0; i < FormulaValue.Length; i++)
                     {
-                        Formula[FormulaRow][i] = null;
+                        for (FormulaRow = 0; FormulaRow < 255; FormulaRow++) Formula[FormulaRow][i] = null;
                         FormulaValue[i] = 0;
                         priority[i] = 0;
                         Output[i] = null;
-                    }
 
+                    }
+                    FormulaRow = 0;
                     break;
                 }
                 //Use Array 
@@ -357,6 +425,15 @@ namespace CalculatorPro
 
                         FormulaValue[i] = FormulaValue[i + 2];
                         FormulaValue[i + 1] = FormulaValue[i + 3];
+
+                        
+                    }
+                    if (FormulaMethod.Checked && Formula[FormulaRow][1] != null)
+                    {
+                        ResultsItem = new ListViewItem();
+                        ResultsItem.Text = "->";
+                        for (int c = 0; c < 255; c++) ResultsItem.Text += Formula[FormulaRow][c];
+                        CalculationResult.Items.Add(ResultsItem);
                     }
                 }
 
@@ -391,11 +468,12 @@ namespace CalculatorPro
                 }
             }
         }*/
+        int LeftParenthesisValue;
         void Priortize()
         {
             for (int i = 0; i < Formula.Length; i++) priority[i] = 0;
 
-            int LeftParenthesisValue = 0;
+            LeftParenthesisValue = 0;
             for (int i = 0; i < 252; i++)
             {
                 if (Formula[FormulaRow][i] == "(") LeftParenthesisValue += 20;
@@ -410,9 +488,6 @@ namespace CalculatorPro
                     if (Formula[FormulaRow][i] == "√")
                         priority[i] = rootV + LeftParenthesisValue;
                 }
-                
-
-
             }
             
         }
@@ -572,7 +647,7 @@ namespace CalculatorPro
                         MultiplyC = false;          // x
                         DivideC = false;            // ÷
                         PowerC = false;             // ^
-                        LeftParenthesisC = false;   // (
+                        LeftParenthesisC = true;   // (
                         RightParenthesisC = false;  // )
                         EqualsC = false;            // =
                         DecimalPointC = false;      // .
@@ -619,7 +694,7 @@ namespace CalculatorPro
                         DivideC = true;             // ÷
                         PowerC = true ;             // ^
                         LeftParenthesisC = false;   // (
-                        RightParenthesisC = false;  // )
+                        RightParenthesisC = true;  // )
                         EqualsC = true;             // =
                         DecimalPointC = false;      // .
                         SinC = true;
@@ -781,15 +856,15 @@ namespace CalculatorPro
                 if (OkC == false && CTF != null)
                 {
                     MessageBox.Show("There is an error --If this is a puzzling error, please let the author know!");
-                    Debug.Text = Formula[FormulaRow][0] + "|" + Formula[FormulaRow][1] + "|" + Formula[FormulaRow][2] + "|" + Formula[FormulaRow][3]
-                        + Formula[FormulaRow][4] + "|" + Formula[FormulaRow][5] + "|" + Formula[FormulaRow][6];
+                    
                     /*for (int errorvalue = 0; errorvalue < 255; errorvalue++) Debug.Text += Formula[FormulaRow][errorvalue];*/
                     for (int errorvalue = 0; errorvalue < 255; errorvalue++) Formula[FormulaRow][errorvalue] = null;
                     break;
                 }
                 
                 }
-                string STFNew = Formula[FormulaRow][FormulaColumn];
+            
+            string STFNew = Formula[FormulaRow][FormulaColumn];
                 if (STFNew == "+" || STFNew == "-" || STFNew == "*" || STFNew == "/" || STFNew == "^" || STFNew == ".")
                 {
                     MessageBox.Show("There is an error --The last part of the equation is incorrect.");
@@ -936,6 +1011,7 @@ namespace CalculatorPro
             
                 //for(i)の終わり
                 }
+            
 
 
         }

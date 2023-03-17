@@ -50,6 +50,7 @@
             this.FormulaResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Debug = new System.Windows.Forms.Label();
+            this.FormulaMethod = new System.Windows.Forms.CheckBox();
             this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -162,6 +163,7 @@
             // display
             // 
             this.display.AllowDrop = true;
+            this.display.Controls.Add(this.FormulaMethod);
             this.display.Controls.Add(this.OutPutType);
             this.display.Location = new System.Drawing.Point(4, 25);
             this.display.Name = "display";
@@ -277,6 +279,19 @@
             this.Debug.TabIndex = 2;
             this.Debug.Text = "label1";
             // 
+            // FormulaMethod
+            // 
+            this.FormulaMethod.AutoSize = true;
+            this.FormulaMethod.Checked = true;
+            this.FormulaMethod.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.FormulaMethod.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormulaMethod.Location = new System.Drawing.Point(6, 37);
+            this.FormulaMethod.Name = "FormulaMethod";
+            this.FormulaMethod.Size = new System.Drawing.Size(313, 26);
+            this.FormulaMethod.TabIndex = 1;
+            this.FormulaMethod.Text = "Output the calculation procedure";
+            this.FormulaMethod.UseVisualStyleBackColor = true;
+            // 
             // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -326,6 +341,7 @@
         private System.Windows.Forms.TabPage display;
         private System.Windows.Forms.CheckBox OutPutType;
         private System.Windows.Forms.Label Debug;
+        private System.Windows.Forms.CheckBox FormulaMethod;
     }
 }
 
