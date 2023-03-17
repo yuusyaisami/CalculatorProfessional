@@ -142,7 +142,7 @@ namespace CalculatorPro
             bool AddSubPVB = false, MulDivPVB = false, PowerPVB = false, SinCosTanPVB = false, rootPVB = false;
 
 
-
+            
             for (int MainLoop; ;)
             {
                 
@@ -157,11 +157,13 @@ namespace CalculatorPro
                 }
                 
                 MostValueIndex = 0;
+                MostValue = 0;
                 for (int a = 0; a < 255; a++)
                 {
-                    if (MostValueIndex < priority[a])
+                    if (MostValue < priority[a])
                     {
                         MostValueIndex = a;
+                        MostValue = priority[a];
                     }
                 }
                 
@@ -178,10 +180,11 @@ namespace CalculatorPro
                             Formula[FormulaRow][a] = Formula[FormulaRow - 1][a];
                         }
                     }
+                    Debug.Text = Formula[FormulaRow][MostValueIndex] + "|" + MostValueIndex + "|" + priority[2] + "|" + priority[3] + "|"
+                        + priority[4] + "|" + priority[5] + "|" + priority[6] + "|" + priority[7] + "|" + priority[8];
                     Formula[FormulaRow][MostValueIndex - 1] = FormulaValue[MostValueIndex - 1].ToString();
 
-                    Debug.Text = Formula[FormulaRow][0] + "|" + Formula[FormulaRow][1] + "|" + Formula[FormulaRow][2] + "|" + Formula[FormulaRow][3] + "|"
-                        + Formula[FormulaRow][4] + "|" + Formula[FormulaRow][5] + "|" + Formula[FormulaRow][6];
+                    
 
                     NomalOperator = true;
                 }
@@ -984,7 +987,7 @@ namespace CalculatorPro
                 {
                     if(i != 0)
                     {
-                        if(Formula[FormulaRow][i - 1] == "sin" || Formula[FormulaRow][i - 1] == "con" || Formula[FormulaRow][i - 1] == "tan")
+                        if(Formula[FormulaRow][i - 1] == "sin" || Formula[FormulaRow][i - 1] == "cos" || Formula[FormulaRow][i - 1] == "tan")
                         {
                             //Nothing
                         }
