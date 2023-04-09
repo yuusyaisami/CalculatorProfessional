@@ -1,0 +1,11 @@
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\bin\Release\CalculatorPro.exe.config
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\bin\Release\CalculatorPro.exe
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\bin\Release\CalculatorPro.pdb
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.csproj.AssemblyReference.cache
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.csproj.SuggestedBindingRedirects.cache
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.CalculatorForm.resources
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.Properties.Resources.resources
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.csproj.GenerateResource.cache
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.csproj.CoreCompileInputs.cache
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.exe
+C:\Users\macar\source\repos\TinnosukeCalculatorPro\obj\Release\CalculatorPro.pdb
