@@ -2,6 +2,7 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/110176625/224534487-8de19954-8c68-45af-bfc5-8658430b0ef6.png" / >
 </p>  
+this is <a href="/README.md">English</a> that is <a href="/README-jp.md">Japanese</a>  
 Multifunctional, easy-to-use calculator application.  
 Here, they do the calculations for you.
 
