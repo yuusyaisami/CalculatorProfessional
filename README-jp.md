@@ -1,3 +1,4 @@
+this is <a href="/README.md">English</a> that is <a href="/README-jp.md">Japanese</a>  
 # このソフトについて    
 このソフトはwindowsやiPhoneなどに標準で用意されている計算機と違い、自分自身の式をあなたのキーボードで打ち込んで、計算します。  
 現在使える演算子は５つあります。  
