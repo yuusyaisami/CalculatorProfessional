@@ -25,4 +25,4 @@ For calculations like this, the answer will look like this
 Example sin(30 + 60) = sin(90)   sin(15 x 2)2 = sin(30) x 2 = 0.5 x 2 = 1
 If you make an error, please let us know, -- and let us know the formula you wrote at the time!  
 # end  
-This text is written in deepl.  
+This text is written in deepl.   
