@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fkXxHP2yYZwZtpvu52ZxOxXKyM9kdn/Xe0X7M0BFtwQ=</dsig:DigestValue>
+        <dsig:DigestValue>d87K7Ns8SAlmXx1hK90hRwVfYNxisFs86No/k0YiqTo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalculatorPro.exe" size="59304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalculatorPro.exe" size="60328">
       <assemblyIdentity name="CalculatorPro" version="1.0.0.0" publicKeyToken="3494AC60E1AFFEFD" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bhj3YAK7H/z56nSCjeurKHVh2CsKD49HghnIHoipKK8=</dsig:DigestValue>
+        <dsig:DigestValue>4XclybvcSck4LlqcKPL/jrLkIC8FfH/F7z6okOHYees=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
