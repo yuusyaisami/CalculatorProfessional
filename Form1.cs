@@ -35,6 +35,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Linq;
 using NAudio.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CalculatorPro
 {
@@ -110,13 +111,53 @@ namespace CalculatorPro
                     Formula[i][j] = null;
                 }
             }
+            //Error0 
         }
+        private void ChengeLang(int L)
+        {
+            if (L == 0)
+            {
+                Setting.Text = "Setting";
+                Information.Text = "information";
+                Calculation.Text = "Calculation";
+                display.Text = "Display";
+                Settingtab.Text = "Setting";
+                Infotab.Text = "Info";
+                DecimalPoint.Text = "Round the answer";
+                OutPutType.Text = "Output the formula you typed.";
+                FormulaMethod.Text = "Output the calculation procedure";
+                SoundVolume.Text = "Sound volume";
+                LanguageText.Text = "Language";
+                ArithmeticMenu.Text = "four arithmetic operators";
+                SpecialMenu.Text = "Slightly special calculation";
+                OpenTheMyGitHubText.Text = "↑ Open the my github! ↑";
+            }
+            else if(L == 1)
+            {
+                Setting.Text = "設定";
+                Information.Text = "情報";
+                Calculation.Text = "計算";
+                display.Text = "表示";
+                Settingtab.Text = "システム設定";
+                Infotab.Text = "ヒント";
+                DecimalPoint.Text = "小数点の位置";
+                OutPutType.Text = "ユーザーの入力した計算式をそのまま出力する";
+                FormulaMethod.Text = "途中式も出力する";
+                SoundVolume.Text = "音量";
+                LanguageText.Text = "言語";
+                ArithmeticMenu.Text = "通常の演算子";
+                SpecialMenu.Text = "特殊な演算子";
+                OpenTheMyGitHubText.Text = "↑ クリックしてgithubを開こう! ↑";
+            }
+        }
+        
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
 
         }
         string[][] Formula = new string[300][];
+        string[] StringTable = new string[300];
         private void RunBtn_Click(object sender, EventArgs e)
         {
 
@@ -141,7 +182,7 @@ namespace CalculatorPro
         
         /*----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
         //関数
-        bool ValueC, AddC, SubC, MultC, DivideC, PowerC, LeftParentC, RightParentC, EqualsC, DecimalPointC, SinC, CosC, TanC, RootC, CheckedC, VariableC;
+        
 
         private void sin_Click(object sender, EventArgs e)
         {
@@ -232,6 +273,30 @@ namespace CalculatorPro
             }
 
         }
+        bool ValueC, AddC, SubC, MultC, DivideC, PowerC, LeftParentC, RightParentC, EqualsC, DecimalPointC, SinC, CosC, TanC, RootC, CheckedC, VariableC, PaiC, logC,log10C,log2C;
+        int Lang;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string SelectedItem = comboBox1.SelectedItem.ToString();
+            if(SelectedItem == "English")
+            {
+                Lang = 0;
+            }
+            else if(SelectedItem == "Japanese")
+            {
+                Lang = 1;
+            }
+            ChengeLang(Lang);
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(CalculationResult.SelectedItems != null && CalculationResult.SelectedItems.Count > 0)
+            {
+                CalculationResult.Items.Remove(CalculationResult.SelectedItems[0]);
+            }
+        }
+
         /// <summary>
         /// FirstFormulaStringの内容を配列に入れる、その時入力された文字が有効か確かめる
         /// </summary>
@@ -256,6 +321,7 @@ namespace CalculatorPro
             TanC = true;                // tan
             RootC = true;               // root
             VariableC = true;           // X or Y
+            PaiC = true;                //π
             CheckedC = false;           // Ok
             for(; FormulaColumn < FirstFormulaString.Length; FormulaColumn++)
             {
@@ -285,6 +351,7 @@ namespace CalculatorPro
                             TanC = true;                // tan
                             RootC = true;               // root
                             VariableC = true;           // X or Y
+                            PaiC = true;                //π
                             CheckedC = true;           // Ok
                             StringFormula[FormulaColumn] = TempFirstFormula;
                         }
@@ -307,6 +374,7 @@ namespace CalculatorPro
                     RootC = true;               // root
                     VariableC = true;           // X or Y
                     EqualsC = false;            // =
+                    PaiC = true;                //π
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "+";
                 }
@@ -326,11 +394,12 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     CheckedC = true;           // Ok
                     EqualsC = false;            // =
                     StringFormula[FormulaColumn] = "-";
                 }
-                else if (DivideC && TempFirstFormula == "*" ||  TempFirstFormula == "・")
+                else if (MultC && TempFirstFormula == "*" ||  TempFirstFormula == "・")
                 {
                     ValueC = true;             // 0123456789
                     AddC = false;               // +
@@ -346,6 +415,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "*";
@@ -366,6 +436,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "/";
@@ -386,6 +457,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "%";
@@ -406,6 +478,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "^";
@@ -426,6 +499,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = true;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "(";
@@ -446,6 +520,7 @@ namespace CalculatorPro
                     TanC = false;                // tan
                     RootC = false;               // root
                     VariableC = false;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = true;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = ")";
@@ -466,6 +541,7 @@ namespace CalculatorPro
                     TanC = false;                // tan
                     RootC = false;               // root
                     VariableC = false;           // X or Y
+                    PaiC = false;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = ".";
@@ -507,6 +583,7 @@ namespace CalculatorPro
                         RootC = true;               // root
                         VariableC = true;           // X or Y
                         EqualsC = false;            // =
+                        PaiC = true;                //π
                         CheckedC = true;           // Ok
                     }
                     
@@ -546,6 +623,7 @@ namespace CalculatorPro
                         TanC = true;                // tan
                         RootC = true;               // root
                         VariableC = true;           // X or Y
+                        PaiC = true;                //π
                         EqualsC = false;            // =
                         CheckedC = true;           // Ok
                     }
@@ -585,6 +663,7 @@ namespace CalculatorPro
                         TanC = true;                // tan
                         RootC = true;               // root
                         VariableC = true;           // X or Y
+                        PaiC = true;                //π
                         EqualsC = false;            // =
                         CheckedC = true;           // Ok
                     }
@@ -605,6 +684,7 @@ namespace CalculatorPro
                     TanC = false;                // tan
                     RootC = false;               // root
                     VariableC = false;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = false;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "√";
@@ -647,6 +727,7 @@ namespace CalculatorPro
                         TanC = true;                // tan
                         RootC = true;               // root
                         VariableC = true;           // X or Y
+                        PaiC = true;                //π
                         EqualsC = false;            // =
                         CheckedC = true;           // Ok
                         StringFormula[FormulaColumn] = "√";
@@ -668,6 +749,7 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = false;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = true;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "x";
@@ -688,15 +770,40 @@ namespace CalculatorPro
                     TanC = true;                // tan
                     RootC = true;               // root
                     VariableC = false;           // X or Y
+                    PaiC = true;                //π
                     EqualsC = true;            // =
                     CheckedC = true;           // Ok
                     StringFormula[FormulaColumn] = "=";
+                }
+                else if (PaiC && TempFirstFormula == "π" || TempFirstFormula == "Π" )
+                {
+                    ValueC = true;             // 0123456789
+                    AddC = true;               // +
+                    SubC = true;                // -
+                    MultC = true;              // x
+                    DivideC = true;            // ÷
+                    PowerC = true;             // ^
+                    LeftParentC = true;         // (
+                    RightParentC = true;       // )
+                    EqualsC = true;            // =
+                    DecimalPointC = true;      // .
+                    SinC = true;                // sin
+                    CosC = true;                // cos
+                    TanC = true;                // tan
+                    RootC = true;               // root
+                    VariableC = true;           // X or Y
+                    PaiC = true;                //π
+                    CheckedC = true;           // Ok
+                    StringFormula[FormulaColumn] = "π";
                 }
                 else 
                 {
                     //Error
                     FormulaColumn++;
-                    MessageBox.Show("index " + FormulaColumn + " is an invalid character");
+                    if(Lang == 0)
+                        MessageBox.Show("index " + FormulaColumn + " is an invalid character");
+                    if(Lang == 1)
+                        MessageBox.Show(FormulaColumn + "番目の値は有効ではありません!");
                     PlaySound("SoundFile/Erroron.wav");
                     Format(true);
                     break;
@@ -705,7 +812,10 @@ namespace CalculatorPro
                 {
                     //Error
                     FormulaColumn++;
-                    MessageBox.Show("index " + FormulaColumn + " is an invalid character");
+                    if (Lang == 0)
+                        MessageBox.Show("index " + FormulaColumn + " is an invalid character");
+                    if (Lang == 1)
+                        MessageBox.Show(FormulaColumn + "番目の値は有効ではありません!");
                     PlaySound("SoundFile/Erroron.wav");
                     Format(true);
                     break;
@@ -812,6 +922,13 @@ namespace CalculatorPro
                         StringFormula[i + 1] = "(";
                     }
                 }
+                CheckValue = int.TryParse(StringFormula[i], out TryParseTempValue);
+                //2πだったら
+                if (StringFormula[i + 1] == "π" && CheckValue)
+                {
+                    MoveArrayItem(1, i + 1, "string", "Right", StringFormula);
+                    StringFormula[i + 1] += "*";
+                }
 
                
 
@@ -909,7 +1026,10 @@ namespace CalculatorPro
             if (string.IsNullOrEmpty(FirstFormulaString))//rich text boxが空だった場合
             {
                 //Error
+                if(Lang == 0)
                 MessageBox.Show("Textbox is empty");
+                if(Lang == 1)
+                    MessageBox.Show("テキストボックスが空です");
                 PlaySound("SoundFile/Erroron.wav");
                 Format(true);
             }

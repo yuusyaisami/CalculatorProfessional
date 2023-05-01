@@ -30,11 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
-            System.Windows.Forms.ListViewGroup listViewGroup9 = new System.Windows.Forms.ListViewGroup("Result0", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup10 = new System.Windows.Forms.ListViewGroup("Result1", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("Result0", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Result1", System.Windows.Forms.HorizontalAlignment.Left);
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.BasicBtn = new System.Windows.Forms.ToolStripButton();
-            this.Normal = new System.Windows.Forms.ToolStripButton();
             this.Setting = new System.Windows.Forms.ToolStripButton();
             this.Information = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -51,13 +49,14 @@
             this.SoundVolumeBar = new System.Windows.Forms.TrackBar();
             this.SoundVolume = new System.Windows.Forms.Label();
             this.Infotab = new System.Windows.Forms.TabPage();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SpecialMenu = new System.Windows.Forms.Label();
+            this.ArithmeticMenu = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.AddOp = new System.Windows.Forms.Label();
             this.Root = new System.Windows.Forms.Label();
             this.tan = new System.Windows.Forms.Label();
             this.cos = new System.Windows.Forms.Label();
@@ -70,7 +69,11 @@
             this.FormulaResult = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Debug = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Pie = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.LanguageText = new System.Windows.Forms.Label();
             this.ToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -84,14 +87,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.SoundVolumeBar)).BeginInit();
             this.Infotab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CalculationMethodPicture)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ToolStrip
             // 
             this.ToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.BasicBtn,
-            this.Normal,
             this.Setting,
             this.Information});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
@@ -100,24 +102,6 @@
             this.ToolStrip.Size = new System.Drawing.Size(1182, 27);
             this.ToolStrip.TabIndex = 0;
             this.ToolStrip.Text = "toolStrip1";
-            // 
-            // BasicBtn
-            // 
-            this.BasicBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.BasicBtn.Image = ((System.Drawing.Image)(resources.GetObject("BasicBtn.Image")));
-            this.BasicBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.BasicBtn.Name = "BasicBtn";
-            this.BasicBtn.Size = new System.Drawing.Size(47, 24);
-            this.BasicBtn.Text = "Basic";
-            // 
-            // Normal
-            // 
-            this.Normal.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.Normal.Image = ((System.Drawing.Image)(resources.GetObject("Normal.Image")));
-            this.Normal.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Normal.Name = "Normal";
-            this.Normal.Size = new System.Drawing.Size(60, 24);
-            this.Normal.Text = "normal";
             // 
             // Setting
             // 
@@ -274,6 +258,8 @@
             // 
             // Settingtab
             // 
+            this.Settingtab.Controls.Add(this.LanguageText);
+            this.Settingtab.Controls.Add(this.comboBox1);
             this.Settingtab.Controls.Add(this.SoundValue);
             this.Settingtab.Controls.Add(this.SoundVolumeBar);
             this.Settingtab.Controls.Add(this.SoundVolume);
@@ -320,14 +306,15 @@
             // 
             // Infotab
             // 
+            this.Infotab.Controls.Add(this.Pie);
             this.Infotab.Controls.Add(this.label1);
-            this.Infotab.Controls.Add(this.label11);
-            this.Infotab.Controls.Add(this.label10);
+            this.Infotab.Controls.Add(this.SpecialMenu);
+            this.Infotab.Controls.Add(this.ArithmeticMenu);
             this.Infotab.Controls.Add(this.label9);
             this.Infotab.Controls.Add(this.label8);
             this.Infotab.Controls.Add(this.label7);
             this.Infotab.Controls.Add(this.label6);
-            this.Infotab.Controls.Add(this.label5);
+            this.Infotab.Controls.Add(this.AddOp);
             this.Infotab.Controls.Add(this.Root);
             this.Infotab.Controls.Add(this.tan);
             this.Infotab.Controls.Add(this.cos);
@@ -340,27 +327,38 @@
             this.Infotab.Text = "Info";
             this.Infotab.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // label1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 51);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(232, 22);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Slightly special calculation";
-            this.toolTip1.SetToolTip(this.label11, "Slightly special calculation\r\n");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(153, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 22);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "%";
+            this.toolTip1.SetToolTip(this.label1, "remainder");
             // 
-            // label10
+            // SpecialMenu
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 7);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(222, 22);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "four arithmetic operators";
-            this.toolTip1.SetToolTip(this.label10, "four arithmetic operators + power");
+            this.SpecialMenu.AutoSize = true;
+            this.SpecialMenu.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpecialMenu.Location = new System.Drawing.Point(18, 51);
+            this.SpecialMenu.Name = "SpecialMenu";
+            this.SpecialMenu.Size = new System.Drawing.Size(232, 22);
+            this.SpecialMenu.TabIndex = 10;
+            this.SpecialMenu.Text = "Slightly special calculation";
+            this.toolTip1.SetToolTip(this.SpecialMenu, "Slightly special calculation\r\n");
+            // 
+            // ArithmeticMenu
+            // 
+            this.ArithmeticMenu.AutoSize = true;
+            this.ArithmeticMenu.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ArithmeticMenu.Location = new System.Drawing.Point(18, 7);
+            this.ArithmeticMenu.Name = "ArithmeticMenu";
+            this.ArithmeticMenu.Size = new System.Drawing.Size(222, 22);
+            this.ArithmeticMenu.TabIndex = 9;
+            this.ArithmeticMenu.Text = "four arithmetic operators";
+            this.toolTip1.SetToolTip(this.ArithmeticMenu, "four arithmetic operators + power");
             // 
             // label9
             // 
@@ -406,16 +404,16 @@
             this.label6.Text = "-";
             this.toolTip1.SetToolTip(this.label6, "subtraction");
             // 
-            // label5
+            // AddOp
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 22);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "+";
-            this.toolTip1.SetToolTip(this.label5, "addition");
+            this.AddOp.AutoSize = true;
+            this.AddOp.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddOp.Location = new System.Drawing.Point(18, 29);
+            this.AddOp.Name = "AddOp";
+            this.AddOp.Size = new System.Drawing.Size(23, 22);
+            this.AddOp.TabIndex = 4;
+            this.AddOp.Text = "+";
+            this.toolTip1.SetToolTip(this.AddOp, "addition");
             // 
             // Root
             // 
@@ -524,15 +522,16 @@
             this.CalculationResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CalculationResult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.FormulaResult});
+            this.CalculationResult.ContextMenuStrip = this.contextMenuStrip1;
             this.CalculationResult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CalculationResult.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            listViewGroup9.Header = "Result0";
-            listViewGroup9.Name = "Result0";
-            listViewGroup10.Header = "Result1";
-            listViewGroup10.Name = "Result1";
+            listViewGroup1.Header = "Result0";
+            listViewGroup1.Name = "Result0";
+            listViewGroup2.Header = "Result1";
+            listViewGroup2.Name = "Result1";
             this.CalculationResult.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup9,
-            listViewGroup10});
+            listViewGroup1,
+            listViewGroup2});
             this.CalculationResult.HideSelection = false;
             this.CalculationResult.Location = new System.Drawing.Point(0, 0);
             this.CalculationResult.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -557,16 +556,55 @@
             this.Debug.Text = "DebugText";
             this.toolTip1.SetToolTip(this.Debug, "Helloworld!!");
             // 
-            // label1
+            // Pie
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(153, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 22);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "%";
-            this.toolTip1.SetToolTip(this.label1, "remainder");
+            this.Pie.AutoSize = true;
+            this.Pie.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pie.Location = new System.Drawing.Point(184, 29);
+            this.Pie.Name = "Pie";
+            this.Pie.Size = new System.Drawing.Size(23, 22);
+            this.Pie.TabIndex = 12;
+            this.Pie.Text = "Π";
+            this.toolTip1.SetToolTip(this.Pie, "Please enter Π or π");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 28);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.deleteToolStripMenuItem.Text = "Delete (D)";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "English",
+            "Japanese"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 124);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "English";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // LanguageText
+            // 
+            this.LanguageText.AutoSize = true;
+            this.LanguageText.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LanguageText.Location = new System.Drawing.Point(17, 99);
+            this.LanguageText.Name = "LanguageText";
+            this.LanguageText.Size = new System.Drawing.Size(93, 22);
+            this.LanguageText.TabIndex = 4;
+            this.LanguageText.Text = "Language";
             // 
             // CalculatorForm
             // 
@@ -600,6 +638,7 @@
             this.Infotab.ResumeLayout(false);
             this.Infotab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CalculationMethodPicture)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -609,8 +648,6 @@
 
         private System.Windows.Forms.ToolStrip ToolStrip;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ToolStripButton BasicBtn;
-        private System.Windows.Forms.ToolStripButton Normal;
         private System.Windows.Forms.ToolStripButton Setting;
         private System.Windows.Forms.ToolStripButton Information;
         private System.Windows.Forms.Label CalculationFormulaText;
@@ -636,16 +673,21 @@
         private System.Windows.Forms.Label cos;
         private System.Windows.Forms.Label sin;
         private System.Windows.Forms.Label OpenTheMyGitHubText;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label SpecialMenu;
+        private System.Windows.Forms.Label ArithmeticMenu;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label AddOp;
         private System.Windows.Forms.CheckBox DecimalPoint;
         private System.Windows.Forms.NumericUpDown RoundUpDown;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Pie;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label LanguageText;
     }
 }
 
