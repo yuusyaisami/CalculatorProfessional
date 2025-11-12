@@ -27,3 +27,10 @@ Example sin(30 + 60) = sin(90)   sin(15 x 2)2 = sin(30) x 2 = 0.5 x 2 = 1
 If you make an error, please let us know, -- and let us know the formula you wrote at the time!  
 # end  
 This text is written in deepl.   
+
+# update
+ちんのすけカリキュレーターが新しく変数に対応しました。
+使用ビデオはこちらから
+![マイビデオ-11](https://github.com/user-attachments/assets/b83a2598-35ec-4533-a758-6e217efd152c)
+
+![マイビデオ-12](https://github.com/user-attachments/assets/3516f173-d551-472c-9abb-8dd4acf9d465)
