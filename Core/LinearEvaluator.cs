@@ -143,7 +143,7 @@ namespace CalculatorPro.Core
 
                 case TokenKind.UnaryPlus:
                 case TokenKind.UnaryMinus:
-                    ApplyUnary(tokens, index);
+                    ApplyUnary(tokens, index, angleUnit);
                     break;
 
                 case TokenKind.Plus:
@@ -152,7 +152,7 @@ namespace CalculatorPro.Core
                 case TokenKind.Divide:
                 case TokenKind.Power:
                 case TokenKind.Percent:
-                    ApplyBinary(tokens, index);
+                    ApplyBinary(tokens, index, angleUnit);
                     break;
 
                 default:
@@ -160,33 +160,37 @@ namespace CalculatorPro.Core
             }
         }
 
-        private void ApplyUnary(List<Token> tokens, int index)
+        private void ApplyUnary(List<Token> tokens, int index, AngleUnit angleUnit)
         {
-            if (index >= tokens.Count - 1 || (tokens[index + 1].Kind != TokenKind.Number && tokens[index + 1].Kind != TokenKind.VariableX))
+            if (index >= tokens.Count - 1 || (tokens[index + 1].Kind != TokenKind.Number && tokens[index + 1].Kind != TokenKind.VariableX && tokens[index + 1].Kind != TokenKind.LeftParen))
             {
                 throw new Exception("Invalid unary operator usage.");
             }
 
-            var value = FromToken(tokens[index + 1]);
+            var (value, count) = GetLinearAt(tokens, index + 1, angleUnit);
             if (tokens[index].Kind == TokenKind.UnaryMinus)
             {
                 value.A = -value.A;
                 value.B = -value.B;
             }
 
-            tokens[index + 1] = new Token(TokenKind.Number, value.ToString(), value.B, value);
+            tokens[index + 1] = new Token(TokenKind.Number, value.B.ToString(), value.B, value);
             tokens.RemoveAt(index);
+            if (count > 1)
+            {
+                tokens.RemoveRange(index + 1, count - 1);
+            }
         }
 
-        private void ApplyBinary(List<Token> tokens, int index)
+        private void ApplyBinary(List<Token> tokens, int index, AngleUnit angleUnit)
         {
             if (index <= 0 || index >= tokens.Count - 1)
             {
                 throw new Exception("Invalid binary operator position.");
             }
 
-            var left = FromToken(tokens[index - 1]);
-            var right = FromToken(tokens[index + 1]);
+            var (left, leftCount) = GetLinearAt(tokens, index - 1, angleUnit);
+            var (right, rightCount) = GetLinearAt(tokens, index + 1, angleUnit);
 
             Linear result;
             switch (tokens[index].Kind)
@@ -249,8 +253,34 @@ namespace CalculatorPro.Core
                     throw new Exception("Unknown binary operator.");
             }
 
-            tokens[index - 1] = new Token(TokenKind.Number, result.ToString(), result.B, result);
-            tokens.RemoveRange(index, 2);
+            int setPos = index - leftCount;
+            tokens[setPos] = new Token(TokenKind.Number, result.B.ToString(), result.B, result);
+            int removeStart = setPos + 1;
+            int removeCount = (index - setPos) + rightCount;
+            tokens.RemoveRange(removeStart, removeCount);
+        }
+
+        private (Linear linear, int tokenCount) GetLinearAt(List<Token> tokens, int pos, AngleUnit angleUnit)
+        {
+            if (tokens[pos].Kind == TokenKind.LeftParen)
+            {
+                int depth = 1;
+                int end = pos + 1;
+                for (; end < tokens.Count; end++)
+                {
+                    if (tokens[end].Kind == TokenKind.LeftParen) depth++;
+                    else if (tokens[end].Kind == TokenKind.RightParen) depth--;
+                    if (depth == 0) break;
+                }
+                if (depth != 0) throw new Exception("Unmatched parenthesis.");
+                var subTokens = tokens.GetRange(pos + 1, end - pos - 1);
+                var linear = EvaluateLinear(subTokens, angleUnit);
+                return (linear, end - pos + 1);
+            }
+            else
+            {
+                return (FromToken(tokens[pos]), 1);
+            }
         }
 
         private void ApplyFunction(List<Token> tokens, int funcIndex, AngleUnit angleUnit)

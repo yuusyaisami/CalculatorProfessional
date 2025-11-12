@@ -98,9 +98,8 @@
             this.Information});
             this.ToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ToolStrip.Name = "ToolStrip";
-            this.ToolStrip.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.ToolStrip.Size = new System.Drawing.Size(1921, 42);
+            this.ToolStrip.Size = new System.Drawing.Size(1478, 34);
             this.ToolStrip.TabIndex = 0;
             this.ToolStrip.Text = "toolStrip1";
             // 
@@ -110,7 +109,7 @@
             this.Setting.Image = ((System.Drawing.Image)(resources.GetObject("Setting.Image")));
             this.Setting.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(91, 36);
+            this.Setting.Size = new System.Drawing.Size(70, 29);
             this.Setting.Text = "setting";
             this.Setting.Click += new System.EventHandler(this.Setting_Click);
             // 
@@ -120,7 +119,7 @@
             this.Information.Image = ((System.Drawing.Image)(resources.GetObject("Information.Image")));
             this.Information.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.Information.Name = "Information";
-            this.Information.Size = new System.Drawing.Size(143, 36);
+            this.Information.Size = new System.Drawing.Size(109, 29);
             this.Information.Text = "information";
             this.Information.Click += new System.EventHandler(this.Information_Click);
             // 
@@ -128,8 +127,8 @@
             // 
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 42);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 34);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -145,9 +144,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.CalculationResult);
-            this.splitContainer1.Size = new System.Drawing.Size(1921, 1003);
-            this.splitContainer1.SplitterDistance = 611;
-            this.splitContainer1.SplitterWidth = 7;
+            this.splitContainer1.Size = new System.Drawing.Size(1478, 750);
+            this.splitContainer1.SplitterDistance = 456;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 1;
             // 
             // OpenTheMyGitHubText
@@ -157,10 +156,10 @@
             this.OpenTheMyGitHubText.AutoSize = true;
             this.OpenTheMyGitHubText.BackColor = System.Drawing.Color.Transparent;
             this.OpenTheMyGitHubText.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.OpenTheMyGitHubText.Location = new System.Drawing.Point(1040, 397);
-            this.OpenTheMyGitHubText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.OpenTheMyGitHubText.Location = new System.Drawing.Point(800, 298);
+            this.OpenTheMyGitHubText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.OpenTheMyGitHubText.Name = "OpenTheMyGitHubText";
-            this.OpenTheMyGitHubText.Size = new System.Drawing.Size(272, 24);
+            this.OpenTheMyGitHubText.Size = new System.Drawing.Size(204, 18);
             this.OpenTheMyGitHubText.TabIndex = 8;
             this.OpenTheMyGitHubText.Text = "↑ Open the my github! ↑";
             this.OpenTheMyGitHubText.Visible = false;
@@ -172,11 +171,11 @@
             this.SettingControl.Controls.Add(this.Settingtab);
             this.SettingControl.Controls.Add(this.Infotab);
             this.SettingControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.SettingControl.Location = new System.Drawing.Point(1069, 0);
-            this.SettingControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.SettingControl.Location = new System.Drawing.Point(822, 0);
+            this.SettingControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SettingControl.Name = "SettingControl";
             this.SettingControl.SelectedIndex = 0;
-            this.SettingControl.Size = new System.Drawing.Size(850, 609);
+            this.SettingControl.Size = new System.Drawing.Size(654, 454);
             this.SettingControl.TabIndex = 7;
             this.SettingControl.TabStop = false;
             this.SettingControl.Visible = false;
@@ -185,26 +184,26 @@
             // 
             this.Calculation.Controls.Add(this.RoundUpDown);
             this.Calculation.Controls.Add(this.DecimalPoint);
-            this.Calculation.Location = new System.Drawing.Point(8, 39);
-            this.Calculation.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Calculation.Location = new System.Drawing.Point(4, 28);
+            this.Calculation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Calculation.Name = "Calculation";
-            this.Calculation.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Calculation.Size = new System.Drawing.Size(834, 562);
+            this.Calculation.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Calculation.Size = new System.Drawing.Size(646, 422);
             this.Calculation.TabIndex = 0;
             this.Calculation.Text = "Calculation";
             this.Calculation.UseVisualStyleBackColor = true;
             // 
             // RoundUpDown
             // 
-            this.RoundUpDown.Location = new System.Drawing.Point(341, 15);
-            this.RoundUpDown.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RoundUpDown.Location = new System.Drawing.Point(262, 11);
+            this.RoundUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RoundUpDown.Maximum = new decimal(new int[] {
             20,
             0,
             0,
             0});
             this.RoundUpDown.Name = "RoundUpDown";
-            this.RoundUpDown.Size = new System.Drawing.Size(72, 31);
+            this.RoundUpDown.Size = new System.Drawing.Size(55, 25);
             this.RoundUpDown.TabIndex = 2;
             this.RoundUpDown.Value = new decimal(new int[] {
             2,
@@ -216,10 +215,10 @@
             // 
             this.DecimalPoint.AutoSize = true;
             this.DecimalPoint.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DecimalPoint.Location = new System.Drawing.Point(10, 9);
-            this.DecimalPoint.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.DecimalPoint.Location = new System.Drawing.Point(8, 7);
+            this.DecimalPoint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DecimalPoint.Name = "DecimalPoint";
-            this.DecimalPoint.Size = new System.Drawing.Size(294, 40);
+            this.DecimalPoint.Size = new System.Drawing.Size(221, 30);
             this.DecimalPoint.TabIndex = 1;
             this.DecimalPoint.Text = "Round the answer";
             this.toolTip1.SetToolTip(this.DecimalPoint, "Number of specified numbers, round off");
@@ -230,11 +229,11 @@
             this.display.AllowDrop = true;
             this.display.Controls.Add(this.FormulaMethod);
             this.display.Controls.Add(this.OutPutType);
-            this.display.Location = new System.Drawing.Point(8, 39);
-            this.display.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.display.Location = new System.Drawing.Point(4, 28);
+            this.display.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.display.Name = "display";
-            this.display.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.display.Size = new System.Drawing.Size(834, 560);
+            this.display.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.display.Size = new System.Drawing.Size(646, 425);
             this.display.TabIndex = 1;
             this.display.Text = "Display";
             this.display.UseVisualStyleBackColor = true;
@@ -243,10 +242,10 @@
             // 
             this.FormulaMethod.AutoSize = true;
             this.FormulaMethod.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormulaMethod.Location = new System.Drawing.Point(10, 59);
-            this.FormulaMethod.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.FormulaMethod.Location = new System.Drawing.Point(8, 44);
+            this.FormulaMethod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FormulaMethod.Name = "FormulaMethod";
-            this.FormulaMethod.Size = new System.Drawing.Size(501, 40);
+            this.FormulaMethod.Size = new System.Drawing.Size(377, 30);
             this.FormulaMethod.TabIndex = 1;
             this.FormulaMethod.Text = "Output the calculation procedure";
             this.FormulaMethod.UseVisualStyleBackColor = true;
@@ -257,10 +256,10 @@
             this.OutPutType.Checked = true;
             this.OutPutType.CheckState = System.Windows.Forms.CheckState.Checked;
             this.OutPutType.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutPutType.Location = new System.Drawing.Point(10, 9);
-            this.OutPutType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.OutPutType.Location = new System.Drawing.Point(8, 7);
+            this.OutPutType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.OutPutType.Name = "OutPutType";
-            this.OutPutType.Size = new System.Drawing.Size(463, 40);
+            this.OutPutType.Size = new System.Drawing.Size(347, 30);
             this.OutPutType.TabIndex = 0;
             this.OutPutType.Text = "Output the formula you typed.";
             this.toolTip1.SetToolTip(this.OutPutType, "If off, use computer programming operators.");
@@ -273,11 +272,11 @@
             this.Settingtab.Controls.Add(this.SoundValue);
             this.Settingtab.Controls.Add(this.SoundVolumeBar);
             this.Settingtab.Controls.Add(this.SoundVolume);
-            this.Settingtab.Location = new System.Drawing.Point(8, 39);
-            this.Settingtab.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Settingtab.Location = new System.Drawing.Point(4, 28);
+            this.Settingtab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Settingtab.Name = "Settingtab";
-            this.Settingtab.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Settingtab.Size = new System.Drawing.Size(834, 560);
+            this.Settingtab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Settingtab.Size = new System.Drawing.Size(646, 425);
             this.Settingtab.TabIndex = 2;
             this.Settingtab.Text = "Setting";
             this.Settingtab.UseVisualStyleBackColor = true;
@@ -286,10 +285,10 @@
             // 
             this.LanguageText.AutoSize = true;
             this.LanguageText.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LanguageText.Location = new System.Drawing.Point(27, 159);
-            this.LanguageText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.LanguageText.Location = new System.Drawing.Point(21, 119);
+            this.LanguageText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LanguageText.Name = "LanguageText";
-            this.LanguageText.Size = new System.Drawing.Size(150, 36);
+            this.LanguageText.Size = new System.Drawing.Size(113, 26);
             this.LanguageText.TabIndex = 4;
             this.LanguageText.Text = "Language";
             // 
@@ -300,10 +299,10 @@
             this.comboBox1.Items.AddRange(new object[] {
             "English",
             "Japanese"});
-            this.comboBox1.Location = new System.Drawing.Point(34, 199);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.comboBox1.Location = new System.Drawing.Point(26, 149);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 32);
+            this.comboBox1.Size = new System.Drawing.Size(150, 26);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.Text = "English";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -312,10 +311,10 @@
             // 
             this.SoundValue.AutoSize = true;
             this.SoundValue.Font = new System.Drawing.Font("Microsoft JhengHei UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoundValue.Location = new System.Drawing.Point(612, 64);
-            this.SoundValue.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SoundValue.Location = new System.Drawing.Point(471, 48);
+            this.SoundValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SoundValue.Name = "SoundValue";
-            this.SoundValue.Size = new System.Drawing.Size(93, 67);
+            this.SoundValue.Size = new System.Drawing.Size(70, 50);
             this.SoundValue.TabIndex = 2;
             this.SoundValue.Text = "20";
             // 
@@ -323,11 +322,11 @@
             // 
             this.SoundVolumeBar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.SoundVolumeBar.LargeChange = 0;
-            this.SoundVolumeBar.Location = new System.Drawing.Point(10, 64);
-            this.SoundVolumeBar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.SoundVolumeBar.Location = new System.Drawing.Point(8, 48);
+            this.SoundVolumeBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SoundVolumeBar.Maximum = 100;
             this.SoundVolumeBar.Name = "SoundVolumeBar";
-            this.SoundVolumeBar.Size = new System.Drawing.Size(578, 90);
+            this.SoundVolumeBar.Size = new System.Drawing.Size(445, 69);
             this.SoundVolumeBar.TabIndex = 1;
             this.SoundVolumeBar.TabStop = false;
             this.SoundVolumeBar.Value = 20;
@@ -337,10 +336,10 @@
             // 
             this.SoundVolume.AutoSize = true;
             this.SoundVolume.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoundVolume.Location = new System.Drawing.Point(27, 24);
-            this.SoundVolume.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SoundVolume.Location = new System.Drawing.Point(21, 18);
+            this.SoundVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SoundVolume.Name = "SoundVolume";
-            this.SoundVolume.Size = new System.Drawing.Size(212, 36);
+            this.SoundVolume.Size = new System.Drawing.Size(159, 26);
             this.SoundVolume.TabIndex = 0;
             this.SoundVolume.Text = "Sound volume";
             // 
@@ -359,11 +358,11 @@
             this.Infotab.Controls.Add(this.tan);
             this.Infotab.Controls.Add(this.cos);
             this.Infotab.Controls.Add(this.sin);
-            this.Infotab.Location = new System.Drawing.Point(8, 39);
-            this.Infotab.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Infotab.Location = new System.Drawing.Point(4, 28);
+            this.Infotab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Infotab.Name = "Infotab";
-            this.Infotab.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.Infotab.Size = new System.Drawing.Size(834, 560);
+            this.Infotab.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Infotab.Size = new System.Drawing.Size(646, 425);
             this.Infotab.TabIndex = 3;
             this.Infotab.Text = "Info";
             this.Infotab.UseVisualStyleBackColor = true;
@@ -372,10 +371,10 @@
             // 
             this.Pie.AutoSize = true;
             this.Pie.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pie.Location = new System.Drawing.Point(299, 47);
-            this.Pie.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Pie.Location = new System.Drawing.Point(230, 35);
+            this.Pie.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Pie.Name = "Pie";
-            this.Pie.Size = new System.Drawing.Size(37, 36);
+            this.Pie.Size = new System.Drawing.Size(29, 26);
             this.Pie.TabIndex = 12;
             this.Pie.Text = "Π";
             this.toolTip1.SetToolTip(this.Pie, "Please enter Π or π");
@@ -384,10 +383,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(248, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(191, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 36);
+            this.label1.Size = new System.Drawing.Size(31, 26);
             this.label1.TabIndex = 11;
             this.label1.Text = "%";
             this.toolTip1.SetToolTip(this.label1, "remainder");
@@ -396,10 +395,10 @@
             // 
             this.SpecialMenu.AutoSize = true;
             this.SpecialMenu.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SpecialMenu.Location = new System.Drawing.Point(29, 81);
-            this.SpecialMenu.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.SpecialMenu.Location = new System.Drawing.Point(22, 61);
+            this.SpecialMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SpecialMenu.Name = "SpecialMenu";
-            this.SpecialMenu.Size = new System.Drawing.Size(373, 36);
+            this.SpecialMenu.Size = new System.Drawing.Size(281, 26);
             this.SpecialMenu.TabIndex = 10;
             this.SpecialMenu.Text = "Slightly special calculation";
             this.toolTip1.SetToolTip(this.SpecialMenu, "Slightly special calculation\r\n");
@@ -408,10 +407,10 @@
             // 
             this.ArithmeticMenu.AutoSize = true;
             this.ArithmeticMenu.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArithmeticMenu.Location = new System.Drawing.Point(29, 11);
-            this.ArithmeticMenu.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.ArithmeticMenu.Location = new System.Drawing.Point(22, 8);
+            this.ArithmeticMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ArithmeticMenu.Name = "ArithmeticMenu";
-            this.ArithmeticMenu.Size = new System.Drawing.Size(358, 36);
+            this.ArithmeticMenu.Size = new System.Drawing.Size(269, 26);
             this.ArithmeticMenu.TabIndex = 9;
             this.ArithmeticMenu.Text = "four arithmetic operators";
             this.toolTip1.SetToolTip(this.ArithmeticMenu, "four arithmetic operators + power");
@@ -420,10 +419,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(202, 47);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Location = new System.Drawing.Point(155, 35);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 36);
+            this.label9.Size = new System.Drawing.Size(28, 26);
             this.label9.TabIndex = 8;
             this.label9.Text = "^";
             this.toolTip1.SetToolTip(this.label9, "power");
@@ -432,10 +431,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(155, 47);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Location = new System.Drawing.Point(119, 35);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 36);
+            this.label8.Size = new System.Drawing.Size(28, 26);
             this.label8.TabIndex = 7;
             this.label8.Text = "÷";
             this.toolTip1.SetToolTip(this.label8, "division Other writing /");
@@ -444,10 +443,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(114, 47);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(88, 35);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(30, 36);
+            this.label7.Size = new System.Drawing.Size(23, 26);
             this.label7.TabIndex = 6;
             this.label7.Text = "x";
             this.toolTip1.SetToolTip(this.label7, "multiplication Other writing *");
@@ -456,10 +455,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(77, 47);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(59, 35);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 36);
+            this.label6.Size = new System.Drawing.Size(21, 26);
             this.label6.TabIndex = 5;
             this.label6.Text = "-";
             this.toolTip1.SetToolTip(this.label6, "subtraction");
@@ -468,10 +467,10 @@
             // 
             this.AddOp.AutoSize = true;
             this.AddOp.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddOp.Location = new System.Drawing.Point(29, 47);
-            this.AddOp.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.AddOp.Location = new System.Drawing.Point(22, 35);
+            this.AddOp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddOp.Name = "AddOp";
-            this.AddOp.Size = new System.Drawing.Size(36, 36);
+            this.AddOp.Size = new System.Drawing.Size(28, 26);
             this.AddOp.TabIndex = 4;
             this.AddOp.Text = "+";
             this.toolTip1.SetToolTip(this.AddOp, "addition");
@@ -480,10 +479,10 @@
             // 
             this.Root.AutoSize = true;
             this.Root.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Root.Location = new System.Drawing.Point(296, 117);
-            this.Root.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Root.Location = new System.Drawing.Point(228, 88);
+            this.Root.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(55, 36);
+            this.Root.Size = new System.Drawing.Size(41, 26);
             this.Root.TabIndex = 3;
             this.Root.Text = "√()";
             this.toolTip1.SetToolTip(this.Root, "Route Calculation");
@@ -492,10 +491,10 @@
             // 
             this.tan.AutoSize = true;
             this.tan.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tan.Location = new System.Drawing.Point(205, 117);
-            this.tan.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tan.Location = new System.Drawing.Point(158, 88);
+            this.tan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tan.Name = "tan";
-            this.tan.Size = new System.Drawing.Size(80, 36);
+            this.tan.Size = new System.Drawing.Size(59, 26);
             this.tan.TabIndex = 2;
             this.tan.Text = "tan()";
             this.toolTip1.SetToolTip(this.tan, "Tangent Calculation");
@@ -504,10 +503,10 @@
             // 
             this.cos.AutoSize = true;
             this.cos.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cos.Location = new System.Drawing.Point(114, 117);
-            this.cos.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.cos.Location = new System.Drawing.Point(88, 88);
+            this.cos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cos.Name = "cos";
-            this.cos.Size = new System.Drawing.Size(80, 36);
+            this.cos.Size = new System.Drawing.Size(61, 26);
             this.cos.TabIndex = 1;
             this.cos.Text = "cos()";
             this.toolTip1.SetToolTip(this.cos, "Cosine Calculation");
@@ -516,10 +515,10 @@
             // 
             this.sin.AutoSize = true;
             this.sin.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sin.Location = new System.Drawing.Point(29, 117);
-            this.sin.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.sin.Location = new System.Drawing.Point(22, 88);
+            this.sin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sin.Name = "sin";
-            this.sin.Size = new System.Drawing.Size(74, 36);
+            this.sin.Size = new System.Drawing.Size(55, 26);
             this.sin.TabIndex = 0;
             this.sin.Text = "sin()";
             this.toolTip1.SetToolTip(this.sin, "Sign Calculator");
@@ -531,10 +530,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculationMethodPicture.BackColor = System.Drawing.Color.MediumAquamarine;
             this.CalculationMethodPicture.Image = ((System.Drawing.Image)(resources.GetObject("CalculationMethodPicture.Image")));
-            this.CalculationMethodPicture.Location = new System.Drawing.Point(1026, 87);
-            this.CalculationMethodPicture.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.CalculationMethodPicture.Location = new System.Drawing.Point(789, 65);
+            this.CalculationMethodPicture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CalculationMethodPicture.Name = "CalculationMethodPicture";
-            this.CalculationMethodPicture.Size = new System.Drawing.Size(850, 305);
+            this.CalculationMethodPicture.Size = new System.Drawing.Size(654, 226);
             this.CalculationMethodPicture.TabIndex = 6;
             this.CalculationMethodPicture.TabStop = false;
             this.CalculationMethodPicture.Visible = false;
@@ -544,10 +543,10 @@
             // 
             this.RunBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.RunBtn.Image = ((System.Drawing.Image)(resources.GetObject("RunBtn.Image")));
-            this.RunBtn.Location = new System.Drawing.Point(785, 31);
-            this.RunBtn.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.RunBtn.Location = new System.Drawing.Point(604, 23);
+            this.RunBtn.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.RunBtn.Name = "RunBtn";
-            this.RunBtn.Size = new System.Drawing.Size(52, 51);
+            this.RunBtn.Size = new System.Drawing.Size(40, 38);
             this.RunBtn.TabIndex = 2;
             this.RunBtn.TabStop = false;
             this.toolTip1.SetToolTip(this.RunBtn, "Run");
@@ -558,10 +557,10 @@
             // 
             this.CalculationFormulaText.AutoSize = true;
             this.CalculationFormulaText.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CalculationFormulaText.Location = new System.Drawing.Point(38, 17);
-            this.CalculationFormulaText.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.CalculationFormulaText.Location = new System.Drawing.Point(29, 13);
+            this.CalculationFormulaText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CalculationFormulaText.Name = "CalculationFormulaText";
-            this.CalculationFormulaText.Size = new System.Drawing.Size(534, 64);
+            this.CalculationFormulaText.Size = new System.Drawing.Size(396, 48);
             this.CalculationFormulaText.TabIndex = 1;
             this.CalculationFormulaText.Text = "calculation formula";
             this.CalculationFormulaText.Click += new System.EventHandler(this.CalculationFormulaText_Click);
@@ -572,12 +571,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalculationFormula.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CalculationFormula.Location = new System.Drawing.Point(18, 87);
-            this.CalculationFormula.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.CalculationFormula.MaximumSize = new System.Drawing.Size(1622, 31997);
-            this.CalculationFormula.MinimumSize = new System.Drawing.Size(850, 477);
+            this.CalculationFormula.Location = new System.Drawing.Point(14, 65);
+            this.CalculationFormula.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CalculationFormula.MaximumSize = new System.Drawing.Size(1249, 23999);
+            this.CalculationFormula.MinimumSize = new System.Drawing.Size(655, 359);
             this.CalculationFormula.Name = "CalculationFormula";
-            this.CalculationFormula.Size = new System.Drawing.Size(970, 482);
+            this.CalculationFormula.Size = new System.Drawing.Size(747, 359);
             this.CalculationFormula.TabIndex = 0;
             this.CalculationFormula.Text = "";
             this.toolTip1.SetToolTip(this.CalculationFormula, "Enter a formula");
@@ -601,9 +600,9 @@
             listViewGroup2});
             this.CalculationResult.HideSelection = false;
             this.CalculationResult.Location = new System.Drawing.Point(0, 0);
-            this.CalculationResult.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            this.CalculationResult.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.CalculationResult.Name = "CalculationResult";
-            this.CalculationResult.Size = new System.Drawing.Size(1919, 383);
+            this.CalculationResult.Size = new System.Drawing.Size(1476, 287);
             this.CalculationResult.TabIndex = 0;
             this.CalculationResult.UseCompatibleStateImageBehavior = false;
             this.CalculationResult.View = System.Windows.Forms.View.List;
@@ -619,37 +618,37 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(197, 42);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 36);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(162, 32);
             this.deleteToolStripMenuItem.Text = "Delete (D)";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // Debug
             // 
             this.Debug.AutoSize = true;
-            this.Debug.Location = new System.Drawing.Point(1412, 15);
-            this.Debug.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.Debug.Location = new System.Drawing.Point(1086, 11);
+            this.Debug.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Debug.Name = "Debug";
-            this.Debug.Size = new System.Drawing.Size(118, 24);
+            this.Debug.Size = new System.Drawing.Size(89, 18);
             this.Debug.TabIndex = 2;
             this.Debug.Text = "DebugText";
             this.toolTip1.SetToolTip(this.Debug, "Helloworld!!");
             // 
             // CalculatorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
-            this.ClientSize = new System.Drawing.Size(1921, 1045);
+            this.ClientSize = new System.Drawing.Size(1478, 784);
             this.Controls.Add(this.Debug);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.ToolStrip);
-            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.MinimumSize = new System.Drawing.Size(1854, 1082);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.MinimumSize = new System.Drawing.Size(1431, 826);
             this.Name = "CalculatorForm";
             this.Text = "CalculatorPro";
             this.ToolStrip.ResumeLayout(false);
